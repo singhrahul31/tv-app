@@ -5,7 +5,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
-import com.tvapp.entity.MovieDetails;
+import com.tvapp.entity.MovieSnapshot;
 
 @Service
 public class MovieDetailService {
@@ -19,10 +19,10 @@ public class MovieDetailService {
 	@Value("${api.key}")
 	private String apiKey;
 	
-	public MovieDetails getMovieDetails(long movieId) {
+	public MovieSnapshot getMovieDetails(long movieId) {
 		String url = baseUrl+"/movie/"+movieId+"?api_key="+apiKey;
 		System.out.println(url);
-		return restTemplate.getForObject(url, MovieDetails.class);
+		return restTemplate.getForObject(url, MovieSnapshot.class);
 		
 	}
 

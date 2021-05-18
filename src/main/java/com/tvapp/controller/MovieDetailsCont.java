@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.tvapp.entity.MovieDetails;
+import com.tvapp.entity.MovieSnapshot;
 import com.tvapp.service.MovieDetailService;
 
 @RestController("/")
@@ -15,7 +15,7 @@ public class MovieDetailsCont {
 	MovieDetailService movieDetailsCont;
 	
 	@GetMapping("movie/{movieId}")
-	public MovieDetails getMovieDetails(@PathVariable long movieId) {
+	public MovieSnapshot getMovieDetails(@PathVariable long movieId) {
 		
 		return movieDetailsCont.getMovieDetails(movieId);
 		
